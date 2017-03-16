@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import meleshko.com.ideaintechtask1.R;
 
-public class HelpContactFragment extends Fragment {
+public class HelpFaqFragment extends Fragment {
 
     @Nullable
     @Override

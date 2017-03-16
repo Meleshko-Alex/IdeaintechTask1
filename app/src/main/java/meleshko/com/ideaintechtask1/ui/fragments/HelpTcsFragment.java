@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 
 import meleshko.com.ideaintechtask1.R;
 
-public class HelpContactFragment extends Fragment {
+public class HelpTcsFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.help_contact_fragment, container, false);
+        return inflater.inflate(R.layout.help_tcs_fragment, container, false);
     }
 }
