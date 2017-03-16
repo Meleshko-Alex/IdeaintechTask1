@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/twilight_blue</item>
+        <item name="colorPrimaryDark">@color/twilight_blue</item>
+        <item name="colorAccent">@color/nice_blue</item>
+    </style>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">15dp</item>
+        <item name="tabPaddingEnd">17dp</item>
+        <item name="tabBackground">@color/white</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/text_tab_selected</item>
+        <item name="tabTextColor">@color/text_tab</item>
+    </style>
+
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/grapefruit</item>
+        <item name="textAllCaps">true</item>
+    </style>
+    
+    <style name="HelpText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/navy</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_normal_16</item>
+    </style>
+
+    <style name="HelpTcsLargeText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/navy</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+
+</resources>

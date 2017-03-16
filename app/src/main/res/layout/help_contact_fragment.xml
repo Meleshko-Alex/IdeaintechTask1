@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/pale_blue">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/HelpText"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/spacing_normal_16"
+        android:text="@string/help_contact_text"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginLeft="@dimen/spacing_normal_16"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/spacing_normal_16"
+        android:background="@color/white"
+        android:hint="@string/message"/>
+
+    <!--<android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginLeft="@dimen/spacing_normal_16"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/spacing_normal_16"
+        android:background="@color/white"
+        android:hint="@string/message">
+
+    </android.support.design.widget.TextInputLayout>-->
+
+    <Button
+        android:id="@+id/button_help_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_normal_16"
+        android:layout_marginRight="@dimen/spacing_normal_16"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/button_radius_2dp"
+        android:text="SEND"
+        android:textColor="@color/white"/>
+
+</LinearLayout>
