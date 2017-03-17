@@ -22,18 +22,12 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="@dimen/spacing_normal_16"
         android:background="@color/white"
-        android:hint="@string/message"/>
-
-    <!--<android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:layout_marginLeft="@dimen/spacing_normal_16"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="@dimen/spacing_normal_16"
-        android:background="@color/white"
-        android:hint="@string/message">
-
-    </android.support.design.widget.TextInputLayout>-->
+        android:gravity="top"
+        android:hint="@string/message"
+        android:paddingLeft="12dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/navy"
+        android:textSize="14sp"/>
 
     <Button
         android:id="@+id/button_help_contact"
