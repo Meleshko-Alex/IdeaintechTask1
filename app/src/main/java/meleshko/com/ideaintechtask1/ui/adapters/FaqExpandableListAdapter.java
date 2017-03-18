@@ -4,8 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleExpandableListAdapter;
-import android.widget.Toast;
 
 import java.util.List;
 import java.util.Map;
@@ -21,14 +22,6 @@ public class FaqExpandableListAdapter extends SimpleExpandableListAdapter {
         mContext = context;
     }
 
-    public FaqExpandableListAdapter(Context context, List<? extends Map<String, ?>> groupData, int expandedGroupLayout, int collapsedGroupLayout, String[] groupFrom, int[] groupTo, List<? extends List<? extends Map<String, ?>>> childData, int childLayout, String[] childFrom, int[] childTo) {
-        super(context, groupData, expandedGroupLayout, collapsedGroupLayout, groupFrom, groupTo, childData, childLayout, childFrom, childTo);
-    }
-
-    public FaqExpandableListAdapter(Context context, List<? extends Map<String, ?>> groupData, int expandedGroupLayout, int collapsedGroupLayout, String[] groupFrom, int[] groupTo, List<? extends List<? extends Map<String, ?>>> childData, int childLayout, int lastChildLayout, String[] childFrom, int[] childTo) {
-        super(context, groupData, expandedGroupLayout, collapsedGroupLayout, groupFrom, groupTo, childData, childLayout, lastChildLayout, childFrom, childTo);
-    }
-
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 
@@ -37,16 +30,18 @@ public class FaqExpandableListAdapter extends SimpleExpandableListAdapter {
             convertView = inflater.inflate(R.layout.fag_quation_item, null);
         }
 
-        if (isExpanded){
-            Toast.makeText(mContext, "AAAAAAAAAAA", Toast.LENGTH_LONG).show();
-        }
-        else{
-            //Изменяем что-нибудь, если текущая Group скрыта
-        }
+        ImageView image = (ImageView)convertView.findViewById(R.id.help_faq_image);
+        RelativeLayout rl = (RelativeLayout)convertView.findViewById(R.id.faq_rel_layout);
 
-        //TextView textGroup = (TextView) convertView.findViewById(R.id.textGroup);
-        //textGroup.setText("Group " + Integer.toString(groupPosition));
+        View v = super.getGroupView(groupPosition, isExpanded, convertView, parent);
 
-        return convertView;
+        if (isExpanded) {
+            image.setImageResource(R.drawable.ic_expand_less_black_24dp);
+            rl.setBackgroundResource(R.color.white);
+        } else {
+            image.setImageResource(R.drawable.ic_expand_more_black_24dp);
+            rl.setBackgroundResource(R.color.pale_blue);
+        }
+        return v;
     }
 }

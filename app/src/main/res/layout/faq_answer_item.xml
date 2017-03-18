@@ -13,6 +13,7 @@
         android:textSize="14sp"
         android:textColor="@color/navy"
         android:layout_marginTop="9dp"
+        android:layout_marginLeft="@dimen/spacing_normal_16"
         android:layout_marginRight="18dp"
         android:layout_marginBottom="24dp"
         />

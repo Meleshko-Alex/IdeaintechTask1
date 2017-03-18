@@ -18,7 +18,7 @@ import meleshko.com.ideaintechtask1.ui.fragments.HelpContactFragment;
 import meleshko.com.ideaintechtask1.ui.fragments.HelpFaqFragment;
 import meleshko.com.ideaintechtask1.ui.fragments.HelpTcsFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class HelpActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private TabLayout tabs;
     private ViewPager mViewPager;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_help);
 
         mViewPager = (ViewPager)findViewById(R.id.viewpager);
 
