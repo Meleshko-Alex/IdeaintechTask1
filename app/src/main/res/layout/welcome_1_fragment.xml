@@ -1,10 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@drawable/dark">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="216dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/onboarding_illustration_1"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/welcome_large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:gravity="center_horizontal"
+        android:text="@string/welcome_large_1"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/welcome_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginRight="62.3dp"
+        android:gravity="center_horizontal"
+        android:text="@string/welcome_small_1"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/welcom_circle_1"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:src="@drawable/ic_pagination_active"/>
+        <ImageView
+            android:id="@+id/welcom_circle_2"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_pagination"/>
+        <ImageView
+            android:id="@+id/welcom_circle_3"
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_pagination"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bottom_welcome"
+        android:layout_width="286dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_radius_6dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="@string/welcome_button"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/bright_sky_blue"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="@string/welcome_bottom"
+        android:textSize="16sp"/>
+
+</LinearLayout>

@@ -48,4 +48,8 @@
     <string name="help_faq_answer_8"> </string>
     <string name="help_faq_question_9">Why can’t I upload funds?</string>
     <string name="help_faq_answer_9"> </string>
+    <string name="welcome_large_1"><![CDATA[CHEAP ABROAD & LOCAL CALLS]]></string>
+    <string name="welcome_small_1">Make calls via wi-fi, data or mobile service anywhere in the world at a fraction of usual rates</string>
+    <string name="welcome_button">JOIN BY PHONE NUMBER</string>
+    <string name="welcome_bottom">BY EMAIL OR SOCIAL</string>
 </resources>

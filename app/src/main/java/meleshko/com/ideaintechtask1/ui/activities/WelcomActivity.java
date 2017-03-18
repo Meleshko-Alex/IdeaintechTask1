@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import meleshko.com.ideaintechtask1.R;
 import meleshko.com.ideaintechtask1.ui.adapters.ViewPagerFragmentAdapter;
-import meleshko.com.ideaintechtask1.ui.fragments.HelpContactFragment;
-import meleshko.com.ideaintechtask1.ui.fragments.HelpFaqFragment;
-import meleshko.com.ideaintechtask1.ui.fragments.HelpTcsFragment;
+import meleshko.com.ideaintechtask1.ui.fragments.WelcomeFragment1;
 
 public class WelcomActivity extends AppCompatActivity {
     private ViewPager mViewPager;
@@ -26,8 +24,8 @@ public class WelcomActivity extends AppCompatActivity {
     private void setupViewPager() {
         ViewPagerFragmentAdapter adapter = new ViewPagerFragmentAdapter(getSupportFragmentManager());
         adapter.addFragment(new WelcomeFragment1(), "FAQ");
-        adapter.addFragment(new WelcomeFragment2(), "CONTACT");
-        adapter.addFragment(new WelcomeFragment3(), "T&CS");
-        mViewPager.setAdapter(adapter6);
+        adapter.addFragment(new WelcomeFragment1(), "CONTACT");
+        adapter.addFragment(new WelcomeFragment1(), "T&CS");
+        mViewPager.setAdapter(adapter);
     }
 }
