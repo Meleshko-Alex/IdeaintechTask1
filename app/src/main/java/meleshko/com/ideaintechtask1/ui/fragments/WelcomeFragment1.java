@@ -13,7 +13,7 @@ public class WelcomeFragment1 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v  = inflater.inflate(R.layout.welcome_1_fragment, container, false);
+        View v  = inflater.inflate(R.layout.welcome_fragment, container, false);
 
         return v;
     }

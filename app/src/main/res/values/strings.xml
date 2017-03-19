@@ -57,4 +57,15 @@
     <string name="welcome_button">JOIN BY PHONE NUMBER</string>
     <string name="welcome_bottom">BY EMAIL OR SOCIAL</string>
     <string name="talkremit">Talkremit</string>
+    <string name="invite">Invite friends and get free calls</string>
+    <string name="invite_by_sms">Invite by sms</string>
+    <string name="invite_skype_friends">Invite Skype friends</string>
+    <string name="invite_by_email">Invite by email</string>
+    <string name="share">Share</string>
+    <string name="copy_invitation_link">Copy invitation link</string>
+    <string name="invite_telegram_friends">Invite Telegram friends</string>
+    <string name="invite_snapchat_friends">Invite Snapchat friends</string>
+    <string name="invite_wechat_friends">Invite Wechat friends</string>
+    <string name="invite_messenger">Invite Messenger friends</string>
+    <string name="invite_fr">Invite friends</string>
 </resources>

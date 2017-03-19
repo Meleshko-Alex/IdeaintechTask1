@@ -10,13 +10,19 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.HelpActivity">
             <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.WelcomActivity"
+            android:theme="@style/AppThemeNoBar">
+            <intent-filter>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.WelcomActivity"
-                  android:theme="@style/AppThemeNoBar">
-
+        <activity
+            android:name=".ui.activities.InviteFriendsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
