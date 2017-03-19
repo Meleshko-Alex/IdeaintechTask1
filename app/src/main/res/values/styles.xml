@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/nice_blue</item>
     </style>
 
+    <style name="AppThemeNoBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/twilight_blue</item>
+        <item name="colorPrimaryDark">@color/twilight_blue</item>
+        <item name="colorAccent">@color/nice_blue</item>
+    </style>
+
     <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabIndicatorHeight">2dp</item>
         <item name="tabPaddingStart">15dp</item>

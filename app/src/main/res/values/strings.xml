@@ -50,6 +50,11 @@
     <string name="help_faq_answer_9"> </string>
     <string name="welcome_large_1"><![CDATA[CHEAP ABROAD & LOCAL CALLS]]></string>
     <string name="welcome_small_1">Make calls via wi-fi, data or mobile service anywhere in the world at a fraction of usual rates</string>
+    <string name="welcome_large_2"><![CDATA[FREE CHAT & VIDEO CALLS]]></string>
+    <string name="welcome_small_2"><![CDATA[Enjoy instant messaging and crystall clear voice & video calls with Talkremit users]]></string>
+    <string name="welcome_large_3">SIMPLE WORLDWIDE MONEY TRANSFER</string>
+    <string name="welcome_small_3">Send money your way right from your bank account using our application</string>
     <string name="welcome_button">JOIN BY PHONE NUMBER</string>
     <string name="welcome_bottom">BY EMAIL OR SOCIAL</string>
+    <string name="talkremit">Talkremit</string>
 </resources>
