@@ -9,14 +9,22 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import io.realm.Realm;
 import meleshko.com.ideaintechtask1.R;
+import meleshko.com.ideaintechtask1.models.User;
 
 public class BdImputDataFragment extends Fragment {
+    private Realm mRealm;
     private Button btn_new_user;
     private EditText et_bd_name, et_bd_avatar, et_bd_role;
     private EditText et_bd_phones_1, et_bd_phones_2;
     private EditText et_bd_emails_1, et_bd_emails_2;
 
+    @Override
+    public void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mRealm = Realm.getDefaultInstance();
+    }
 
     @Nullable
     @Override
@@ -34,7 +42,15 @@ public class BdImputDataFragment extends Fragment {
         btn_new_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mRealm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+                        User user = mRealm.createObject(User.class);
+                        user.setFullName(et_bd_name.getText().toString());
+                        user.setAvatar(et_bd_avatar.getText().toString());
+                        user.setRole(et_bd_role.getText().toString());
+                    }
+                });
             }
         });
         return v;
