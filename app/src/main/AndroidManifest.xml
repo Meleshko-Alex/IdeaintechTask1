@@ -17,15 +17,18 @@
             android:name=".ui.activities.WelcomActivity"
             android:theme="@style/AppThemeNoBar">
             <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activities.InviteFriendsActivity">
+            <intent-filter>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.activities.InviteFriendsActivity">
+        <activity android:name=".ui.activities.RealmBdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
