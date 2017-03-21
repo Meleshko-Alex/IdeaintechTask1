@@ -34,8 +34,6 @@ public class HelpActivity extends AppCompatActivity {
         setupToolbar();
         setupViewPager();
         setupTabs();
-
-
     }
 
     private void setupViewPager() {

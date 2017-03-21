@@ -10,7 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import io.realm.Realm;
+import io.realm.RealmList;
+import io.realm.RealmResults;
 import meleshko.com.ideaintechtask1.R;
+import meleshko.com.ideaintechtask1.models.Emails;
+import meleshko.com.ideaintechtask1.models.Phones;
 import meleshko.com.ideaintechtask1.models.User;
 
 public class BdImputDataFragment extends Fragment {
@@ -42,17 +46,58 @@ public class BdImputDataFragment extends Fragment {
         btn_new_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRealm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-                        User user = mRealm.createObject(User.class);
-                        user.setFullName(et_bd_name.getText().toString());
-                        user.setAvatar(et_bd_avatar.getText().toString());
-                        user.setRole(et_bd_role.getText().toString());
-                    }
-                });
+                if(!et_bd_name.getText().toString().equals("")){
+                    mRealm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            int primaryKey = 0;
+                            try {
+                                RealmResults<User> results = realm.where(User.class).findAll();
+                                primaryKey = results.max("userId").intValue() + 1;
+                            } catch (NullPointerException e){
+                                primaryKey = 1;
+
+                            }finally {
+                                User user = mRealm.createObject(User.class, primaryKey);
+                                user.setFullName(et_bd_name.getText().toString());
+                                user.setAvatar(et_bd_avatar.getText().toString());
+                                user.setRole(et_bd_role.getText().toString());
+
+                                RealmList<Emails> emails = new RealmList<>();
+
+                                Emails email1 = realm.createObject(Emails.class);
+                                email1.setEmail(et_bd_emails_1.getText().toString());
+                                emails.add(email1);
+                                Emails email2 = realm.createObject(Emails.class);
+                                email2.setEmail(et_bd_emails_2.getText().toString());
+                                emails.add(email2);
+
+                                user.setEmails(emails);
+
+                                RealmList<Phones> phones = new RealmList<>();
+
+                                Phones phone1 = realm.createObject(Phones.class);
+                                phone1.setPhone(et_bd_phones_1.getText().toString());
+                                phones.add(phone1);
+
+                                Phones phone2 = realm.createObject(Phones.class);
+                                phone2.setPhone(et_bd_phones_2.getText().toString());
+                                phones.add(phone2);
+
+                                user.setPhones(phones);
+                            }
+
+                        }
+                    });
+                }
             }
         });
         return v;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mRealm.close();
     }
 }

@@ -2,9 +2,11 @@ package meleshko.com.ideaintechtask1.models;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
-public class User extends RealmObject{
+public class User extends RealmObject {
+    @PrimaryKey
     private int userId;
     @Required
     private String fullName;

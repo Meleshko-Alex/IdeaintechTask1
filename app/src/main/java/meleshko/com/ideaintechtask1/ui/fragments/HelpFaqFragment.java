@@ -21,9 +21,6 @@ import meleshko.com.ideaintechtask1.ui.adapters.FaqExpandableListAdapter;
 public class HelpFaqFragment extends Fragment {
     private ExpandableListView exListView;
 
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -69,6 +66,5 @@ public class HelpFaqFragment extends Fragment {
                 childFrom, childTo);
 
         exListView.setAdapter(adapter);
-        //exListView.setIndicatorBounds(10, 20);
     }
 }

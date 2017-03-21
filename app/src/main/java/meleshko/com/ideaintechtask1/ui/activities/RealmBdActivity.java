@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import meleshko.com.ideaintechtask1.R;
 import meleshko.com.ideaintechtask1.ui.fragments.BdImputDataFragment;
-import meleshko.com.ideaintechtask1.ui.fragments.BdInfoFragment;
 import meleshko.com.ideaintechtask1.ui.fragments.BdListFragment;
 
 public class RealmBdActivity extends AppCompatActivity {
@@ -19,7 +18,6 @@ public class RealmBdActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.list_container, new BdListFragment())
-                    .add(R.id.info_container, new BdInfoFragment())
                     .add(R.id.input_container, new BdImputDataFragment())
                     .commit();
         }
