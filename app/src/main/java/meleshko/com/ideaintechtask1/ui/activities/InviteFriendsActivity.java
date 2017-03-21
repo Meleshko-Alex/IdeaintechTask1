@@ -1,7 +1,14 @@
 package meleshko.com.ideaintechtask1.ui.activities;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +20,7 @@ public class InviteFriendsActivity extends AppCompatActivity implements View.OnC
     private ImageView btn_invite_sms, btn_invite_email, btn_invite_skype;
     private ImageView btn_invite_email_copy, btn_invite_wechat, btn_invite_snapchat;
     private ImageView btn_invite_telegram, btn_invite_link, btn_invite_share;
+    private String inviteText = "We invite you in talkremit";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,32 +72,89 @@ public class InviteFriendsActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_invite_sms:
-
+                inviteByApp();
                 break;
             case R.id.btn_invite_email:
-
+                inviteByEmail();
                 break;
             case R.id.btn_invite_skype:
-
+                if(!openApp("com.skype.raider")) createDialog();
                 break;
             case R.id.btn_invite_email_copy:
-
+                if(!openApp("com.facebook.orca")) createDialog();
                 break;
             case R.id.btn_invite_wechat:
-
+                if(!openApp("com.tencent.mm")) createDialog();
                 break;
             case R.id.btn_invite_snapchat:
-
+                if(!openApp("com.snapchat.android")) createDialog();
                 break;
             case R.id.btn_invite_telegram:
-
+                if(!openApp("org.telegram.messenger")) createDialog();
                 break;
             case R.id.btn_invite_link:
-
+                copyLink();
                 break;
             case R.id.btn_invite_share:
-
+                inviteByApp();
                 break;
         }
+    }
+
+    private void copyLink() {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("", inviteText);
+        clipboard.setPrimaryClip(clip);
+    }
+
+    private void inviteByApp() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, inviteText);
+        sendIntent.setType("text/plain");
+        startActivity(Intent.createChooser(sendIntent, "Send invite"));
+    }
+
+    private void inviteByEmail() {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, inviteText);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
+
+    private void createDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(InviteFriendsActivity.this);
+        builder.setTitle("Sorry, You haven't this app!")
+                .setMessage("Do you want install?")
+                .setCancelable(false)
+                .setNegativeButton("No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        builder.setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                             public void onClick(DialogInterface dialog, int id) {
+                                 dialog.cancel();
+                             }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    public boolean openApp(String packageName) {
+        PackageManager manager = this.getPackageManager();
+        Intent i = manager.getLaunchIntentForPackage(packageName);
+        if (i == null) {
+            return false;
+        }
+        i.addCategory(Intent.CATEGORY_LAUNCHER);
+        i.putExtra(Intent.EXTRA_TEXT, inviteText);
+        i.setType("text/plain");
+        i.setAction(Intent.ACTION_SEND);
+        this.startActivity(i);
+        return true;
     }
 }
