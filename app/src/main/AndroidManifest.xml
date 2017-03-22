@@ -11,7 +11,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.HelpActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -33,6 +32,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activities.UserActivity">
+        </activity>
+        <activity android:name=".ui.activities2.MainActivity"
+                  android:theme="@style/AppThemeNoBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 

@@ -53,4 +53,14 @@
         <item name="android:layout_marginBottom">24dp</item>
     </style>
 
+    <style name="drawer_text_menu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_normal_16</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
 </resources>

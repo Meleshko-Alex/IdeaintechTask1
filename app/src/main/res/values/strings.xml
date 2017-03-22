@@ -68,4 +68,11 @@
     <string name="invite_wechat_friends">Invite Wechat friends</string>
     <string name="invite_messenger">Invite Messenger friends</string>
     <string name="invite_fr">Invite friends</string>
+    <string name="chat_settings">Chat Settings</string>
+    <string name="notifications">Notifications</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="remittance_profile">Remittance Profile</string>
+    <string name="transactions">Transactions</string>
+    <string name="beneficiaries">Beneficiaries</string>
+    <string name="ltd">© TalkRemit, 2017. Version 1.0</string>
 </resources>
