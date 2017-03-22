@@ -21,73 +21,73 @@
                 android:id="@+id/text_1"
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_1"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_1_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_2"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_2_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_3"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_3_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_4"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_4_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_5"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_5_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_6"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_6_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_7"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_7_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_8"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_8_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_9"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_9_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_10"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_10_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_11"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_11_content"/>
             <TextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_12"/>
-            <TextView
+            <com.codesgood.views.JustifiedTextView
                 style="@style/HelpTcsLargeText"
                 android:text="@string/help_tcs_p_12_content"/>
 
