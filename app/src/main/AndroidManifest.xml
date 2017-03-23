@@ -33,13 +33,24 @@
         </activity>
         <activity android:name=".ui.activities.UserActivity">
         </activity>
-        <activity android:name=".ui.activities2.MainActivity"
-                  android:theme="@style/AppThemeNoBar">
+        <activity
+            android:name=".ui.activities2.MainActivity"
+            android:theme="@style/AppThemeNoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.activities2.HelpMenuActivity">
+        </activity>
+        <activity android:name=".ui.activities2.ChatSettingsActivity">
+        </activity>
+        <activity android:name=".ui.activities2.ContactUsActivity">
+        </activity>
+        <activity android:name=".ui.activities2.TermsAndConditionsActivity">
+        </activity>
+        <activity android:name=".ui.activities2.FaqActivity">
         </activity>
     </application>
 

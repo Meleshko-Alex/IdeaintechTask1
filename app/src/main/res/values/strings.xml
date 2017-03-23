@@ -75,4 +75,18 @@
     <string name="transactions">Transactions</string>
     <string name="beneficiaries">Beneficiaries</string>
     <string name="ltd">© TalkRemit, 2017. Version 1.0</string>
+    <string name="feedback">Feedback</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="blocked_users">Blocked Users</string>
+    <string name="chat_wallpaper">Chat Wallpaper</string>
+    <string name="chat_backup">Chat Backup</string>
+    <string name="archive_all_chats">Archive All Chats</string>
+    <string name="delete_all_chats">Delete All Chats</string>
+    <string name="clear_all_chats">Clear All Chats</string>
+    <string name="save_incoming_media">Save Incoming Media</string>
+    <string name="chat_sett">Automatically save images and video that you receive into the Camera Roll</string>
+    <string name="contact_hint">Please wright your message below and we will get back to you shortly</string>
+    <string name="hello">Hello,</string>
 </resources>

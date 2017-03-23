@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/spacing_normal_16"
+              android:paddingRight="@dimen/spacing_normal_16"
+              android:paddingTop="17dp"
+              android:background="@color/white">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hello"
+            android:inputType="text"
+            android:textColor="@color/navy"
+            android:textColorHint="@color/bright_sky_blue"
+            android:hint="@string/message"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_hint"
+        android:textSize="12sp"
+        android:alpha="0.54"
+        android:textColor="@color/navy"/>
+
+</LinearLayout>

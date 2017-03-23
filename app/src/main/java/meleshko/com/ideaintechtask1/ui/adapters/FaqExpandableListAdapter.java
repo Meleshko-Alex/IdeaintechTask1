@@ -37,10 +37,8 @@ public class FaqExpandableListAdapter extends SimpleExpandableListAdapter {
 
         if (isExpanded) {
             image.setImageResource(R.drawable.ic_expand_less_black_24dp);
-            rl.setBackgroundResource(R.color.white);
         } else {
             image.setImageResource(R.drawable.ic_expand_more_black_24dp);
-            rl.setBackgroundResource(R.color.pale_blue);
         }
         return v;
     }

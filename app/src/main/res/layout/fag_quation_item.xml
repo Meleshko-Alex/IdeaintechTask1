@@ -3,6 +3,7 @@
               android:id="@+id/faq_rel_layout"
               android:layout_width="match_parent"
               android:layout_height="47dp"
+                android:background="@color/white"
               android:layout_marginLeft="@dimen/spacing_normal_16">
 
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"

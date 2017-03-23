@@ -3,16 +3,16 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/pale_blue">
+              android:background="@color/white">
 
     <ExpandableListView
+        android:background="@color/white"
         android:id="@+id/exListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@null"
         android:groupIndicator="@null"
         android:layout_marginTop="@dimen/spacing_small_8">
-
     </ExpandableListView>
 
 </LinearLayout>

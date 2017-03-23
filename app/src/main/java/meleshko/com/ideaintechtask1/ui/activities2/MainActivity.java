@@ -1,5 +1,6 @@
 package meleshko.com.ideaintechtask1.ui.activities2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ll_chat_settings:
+                Intent chatIntent = new Intent(this, ChatSettingsActivity.class);
+                startActivity(chatIntent);
                 break;
             case R.id.ll_notifications:
                 break;
@@ -82,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ll_beneficiaries:
                 break;
             case R.id.ll_help:
+                Intent intent = new Intent(this, HelpMenuActivity.class);
+                startActivity(intent);
                 break;
         }
     }
