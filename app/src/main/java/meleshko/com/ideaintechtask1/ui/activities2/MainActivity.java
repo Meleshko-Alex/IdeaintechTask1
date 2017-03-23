@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import meleshko.com.ideaintechtask1.R;
 
@@ -37,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setupNavigationViewData() {
 
-        TextView drawer_name = (TextView)header.findViewById(R.id.drawer_name);
-        drawer_name.setText("MELEHKO");
         ll_chat_settings = (LinearLayout)header.findViewById(R.id.ll_chat_settings);
         ll_chat_settings.setOnClickListener(this);
         ll_notifications = (LinearLayout)header.findViewById(R.id.ll_notifications);
