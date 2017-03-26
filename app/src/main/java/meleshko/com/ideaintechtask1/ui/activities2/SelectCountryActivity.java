@@ -1,77 +1,69 @@
 package meleshko.com.ideaintechtask1.ui.activities2;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Locale;
 import java.util.Set;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import meleshko.com.ideaintechtask1.R;
 import meleshko.com.ideaintechtask1.models.Country;
+import meleshko.com.ideaintechtask1.ui.adapters.CountryCodeRecyclerAdapter;
 
 import static java.lang.String.valueOf;
 
 public class SelectCountryActivity extends BaseActivity {
 
+    @BindView(R.id.recycler_country) RecyclerView recycler_country;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_country);
-
+        ButterKnife.bind(this);
         setTitleActionBar(getString(R.string.select_country));
 
-        getCountryList();
-
-        /*PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
-        Set<String> set = phoneUtil.getSupportedRegions();
-        String[] allContries = set.toArray(new String[set.size()]);
-
-        String countryName;
-        String countryShortName;
-        String phoneCode;
-        for (int i = 0; i < set.size(); i++) {
-            countryShortName = allContries[i];
-            phoneCode = "+" + valueOf(phoneUtil.getCountryCodeForRegion(countryShortName));
-            //countryShortName = allContries[i].toLowerCase();
-            Locale locale = new Locale("en", allContries[i]);
-            countryName = locale.getDisplayCountry(new Locale("en"));
-
-            Country country = new Country(countryName, countryShortName.toLowerCase(), phoneCode);
-            //Log.d("AAA", country1 + " " + countryName + phoneUtil.getCountryCodeForRegion("RU"));
-            Log.d("AAA", country.getName() + "  "  + country.getShortName() + "   " + country.getPhoneCode());*/
-
+        recycler_country.setLayoutManager(new LinearLayoutManager(this));
+        CountryCodeRecyclerAdapter adapter = new CountryCodeRecyclerAdapter(getCountryList(), this);
+        recycler_country.setAdapter(adapter);
         }
 
-    public void getCountryList(){
-        String countryName;
+    public ArrayList<Country> getCountryList(){
         PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
         Set<String> set = phoneUtil.getSupportedRegions();
         String[] allContriesShortNsmes = set.toArray(new String[set.size()]);
         String[] allContriesNames = new String[set.size()];
-        String[] sortAllContriesNames = new String[set.size()];
         for(int i = 0; i < allContriesShortNsmes.length; i++){
             Locale locale = new Locale("en", allContriesShortNsmes[i]);
             allContriesNames[i]  = locale.getDisplayCountry(new Locale("en"));
-            sortAllContriesNames[i]  = locale.getDisplayCountry(new Locale("en"));
         }
-        Arrays.sort(sortAllContriesNames);
-        List<Country> dataList = new ArrayList<>();
+        ArrayList<Country> dataList = new ArrayList<>();
         for(int i = 0; i < allContriesNames.length; i++){
             dataList.add(new Country(
-                    sortAllContriesNames[i],
+                    allContriesNames[i],
                     "+" + valueOf(phoneUtil.getCountryCodeForRegion(allContriesShortNsmes[i])),
                      getFlagResID(allContriesShortNsmes[i].toLowerCase())));
         }
+        Collections.sort(dataList, new Comparator<Country>() {
+            @Override
+            public int compare(Country o1, Country o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
 
-        for(Country country : dataList){
-            Log.d("AAA", country.getName() + "  "  + country.getPhoneCode() + "   " + country.getFlagImageRes());
-        }
+        /*for(int i=0;i<dataList.size();i++){
 
+            Log.d("AAA", dataList.get(i).getName() + "  "  + allContriesShortNsmes[i]);
+        }*/
+        return dataList;
     }
 
     static int getFlagResID(String country) {
@@ -86,6 +78,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.ad;
             case "ao": //angola
                 return R.drawable.ao;
+            case "ac": //ascension island
+                return R.drawable.ac;
             case "aq": //antarctica // custom
                 return R.drawable.aq;
             case "ar": //argentina
@@ -98,6 +92,10 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.au;
             case "at": //austria
                 return R.drawable.at;
+            case "as": //american samoa
+                return R.drawable.as;
+            case "ax": //Åland Islands
+                return R.drawable.ax;
             case "az": //azerbaijan
                 return R.drawable.az;
             case "bh": //bahrain
@@ -126,6 +124,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.bn;
             case "bg": //bulgaria
                 return R.drawable.bg;
+            case "bq": //caribbean netherlands
+                return R.drawable.nl;
             case "bf": //burkina faso
                 return R.drawable.bf;
             case "mm": //myanmar
@@ -168,6 +168,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.hr;
             case "cu": //cuba
                 return R.drawable.cu;
+            case "cw": //Curaçao
+                return R.drawable.cw;
             case "cy": //cyprus
                 return R.drawable.cy;
             case "cz": //czech republic
@@ -190,6 +192,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.er;
             case "ee": //estonia
                 return R.drawable.ee;
+            case "eh": //western sahara
+                return R.drawable.eh;
             case "et": //ethiopia
                 return R.drawable.et;
             case "fk": //falkland islands (malvinas)
@@ -208,14 +212,22 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.ga;
             case "gm": //gambia
                 return R.drawable.gm;
+            case "gu": //guam
+                return R.drawable.gu;
             case "ge": //georgia
                 return R.drawable.ge;
             case "de": //germany
                 return R.drawable.de;
             case "gh": //ghana
                 return R.drawable.gh;
+            case "gf": //french guiana
+                return R.drawable.gf;
+            case "gg": //guernsey
+                return R.drawable.gg;
             case "gi": //gibraltar
                 return R.drawable.gi;
+            case "gp": //guadeloupe
+                return R.drawable.gp;
             case "gr": //greece
                 return R.drawable.gr;
             case "gl": //greenland
@@ -240,6 +252,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.in;
             case "id": //indonesia
                 return R.drawable.id;
+            case "io": //British indonesia
+                return R.drawable.io;
             case "ir": //iran, islamic republic of
                 return R.drawable.ir;
             case "iq": //iraq
@@ -252,8 +266,12 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.il;
             case "it": //italy
                 return R.drawable.it;
+            case "is": //iceland
+                return R.drawable.is;
             case "ci": //côte d\'ivoire
                 return R.drawable.ci;
+            case "je": //jersey
+                return R.drawable.je;
             case "jp": //japan
                 return R.drawable.jp;
             case "jo": //jordan
@@ -266,6 +284,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.ki;
             case "kw": //kuwait
                 return R.drawable.kw;
+            case "ky": //cayman islands
+                return R.drawable.ky;
             case "kg": //kyrgyzstan
                 return R.drawable.kg;
             case "la": //lao people\'s democratic republic
@@ -300,6 +320,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.mv;
             case "ml": //mali
                 return R.drawable.ml;
+            case "mf": //St.Martin - France
+                return R.drawable.fr;
             case "mt": //malta
                 return R.drawable.mt;
             case "mh": //marshall islands
@@ -308,8 +330,10 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.mr;
             case "mu": //mauritius
                 return R.drawable.mu;
+            case "mq": //martinique
+                return R.drawable.mq;
             case "yt": //mayotte
-                return R.drawable.nof; // no exact flag found
+                return R.drawable.yt; // no exact flag found
             case "mx": //mexico
                 return R.drawable.mx;
             case "fm": //micronesia, federated states of
@@ -320,6 +344,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.mc;
             case "mn": //mongolia
                 return R.drawable.mn;
+            case "mp": //northern mariana islands
+                return R.drawable.mp;
             case "me": //montenegro
                 return R.drawable.me;// custom
             case "ma": //morocco
@@ -328,6 +354,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.mz;
             case "na": //namibia
                 return R.drawable.na;
+            case "nf": //namibia
+                return R.drawable.nf;
             case "nr": //nauru
                 return R.drawable.nr;
             case "np": //nepal
@@ -372,10 +400,14 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.pl;
             case "pt": //portugal
                 return R.drawable.pt;
+            case "ps": //polestine
+                return R.drawable.ps;
             case "pr": //puerto rico
                 return R.drawable.pr;
             case "qa": //qatar
                 return R.drawable.qa;
+            case "re": //Réunion
+                return R.drawable.re;
             case "ro": //romania
                 return R.drawable.ro;
             case "ru": //russian federation
@@ -402,14 +434,20 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.sl;
             case "sg": //singapore
                 return R.drawable.sg;
+            case "sj": //svalbard & jan mayen
+                return R.drawable.no;
             case "sk": //slovakia
                 return R.drawable.sk;
             case "si": //slovenia
                 return R.drawable.si;
             case "sb": //solomon islands
                 return R.drawable.sb;
+            case "ss": //south sudan
+                return R.drawable.ss;
             case "so": //somalia
                 return R.drawable.so;
+            case "sx": //sint maarten
+                return R.drawable.sx;
             case "za": //south africa
                 return R.drawable.za;
             case "kr": //south korea
@@ -421,7 +459,7 @@ public class SelectCountryActivity extends BaseActivity {
             case "sh": //saint helena, ascension and tristan da cunha
                 return R.drawable.sh; // custom
             case "pm": //saint pierre and miquelon
-                return R.drawable.nof;
+                return R.drawable.pm;
             case "sd": //sudan
                 return R.drawable.sd;
             case "sr": //suriname
@@ -434,6 +472,8 @@ public class SelectCountryActivity extends BaseActivity {
                 return R.drawable.ch;
             case "sy": //syrian arab republic
                 return R.drawable.sy;
+            case "ta": //tristan da Cunha
+                return R.drawable.ta;
             case "tw": //taiwan, province of china
                 return R.drawable.tw;
             case "tj": //tajikistan

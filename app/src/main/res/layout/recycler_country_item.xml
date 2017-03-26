@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="45dp"
+              android:id="@+id/item_rl">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="A"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:id="@+id/item_big_letter"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"/>
+    
+    <ImageView
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:src="@drawable/ua"
+        android:layout_marginLeft="73dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/item_image"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/navy"
+        android:fontFamily="sans-serif"
+        android:text="Afghanistan"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/item_image"
+        android:layout_marginLeft="27dp"
+        android:id="@+id/item_country"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/navy"
+        android:fontFamily="sans-serif"
+        android:text="+213"
+        android:alpha="0.54"
+        android:layout_alignBaseline="@+id/item_country"
+        android:layout_alignBottom="@+id/item_country"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/item_country_code"/>
+
+</RelativeLayout>

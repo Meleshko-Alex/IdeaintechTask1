@@ -34,13 +34,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ButterKnife.bind(this);
 
+        mNavigationDrawer = (DrawerLayout)findViewById(R.id.navigation_drawer);
         navigation_view = (NavigationView)findViewById(R.id.navigation_view);
         header = navigation_view.getHeaderView(0);
 
-
-
         setupDrawer();
         setupNavigationViewData();
+
+
     }
 
     private void setupNavigationViewData() {
@@ -106,7 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
-
+            if (data != null){
+                btn_select_country.setText(data.getStringExtra("EXTRA_ANSWER_COUNTRY_CODE"));
+            }
         }
     }
 }
