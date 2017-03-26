@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.l4digital.fastscroll.FastScroller;
+
 import java.util.ArrayList;
 
 import meleshko.com.ideaintechtask1.R;
@@ -23,7 +25,7 @@ import meleshko.com.ideaintechtask1.utils.RoundImage;
 
 import static android.app.Activity.RESULT_OK;
 
-public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCodeRecyclerAdapter.ViewHolder>{
+public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCodeRecyclerAdapter.ViewHolder> implements FastScroller.SectionIndexer{
     private static final String EXTRA_ANSWER_COUNTRY_CODE = "EXTRA_ANSWER_COUNTRY_CODE";
     private final ArrayList<Country> mCountry;
     private final Context mContext;
@@ -61,6 +63,11 @@ public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCode
     @Override
     public int getItemCount() {
         return mCountry.size();
+    }
+
+    @Override
+    public String getSectionText(int position) {
+        return String.valueOf(mCountry.get(position).getName().charAt(0));
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -2,9 +2,9 @@ package meleshko.com.ideaintechtask1.ui.activities2;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
+import com.l4digital.fastscroll.FastScrollRecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +22,7 @@ import static java.lang.String.valueOf;
 
 public class SelectCountryActivity extends BaseActivity {
 
-    @BindView(R.id.recycler_country) RecyclerView recycler_country;
+    @BindView(R.id.recycler_country) FastScrollRecyclerView recycler_country;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
