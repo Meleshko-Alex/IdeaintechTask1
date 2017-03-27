@@ -4,6 +4,7 @@ public class Country {
     private String name;
     private String phoneCode;
     private int flagImageRes;
+    private String firstLetter;
 
     public Country(String name, String phoneCode, int flagImageRes) {
         this.name = name;
@@ -21,5 +22,13 @@ public class Country {
 
     public int getFlagImageRes() {
         return flagImageRes;
+    }
+
+    public String getFirstLetter() {
+        return firstLetter;
+    }
+
+    public void setFirstLetter(String firstLetter) {
+        this.firstLetter = firstLetter;
     }
 }

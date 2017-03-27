@@ -2,6 +2,7 @@ package meleshko.com.ideaintechtask1.ui.activities2;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.Menu;
 
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.l4digital.fastscroll.FastScrollRecyclerView;
@@ -34,7 +35,14 @@ public class SelectCountryActivity extends BaseActivity {
         recycler_country.setLayoutManager(new LinearLayoutManager(this));
         CountryCodeRecyclerAdapter adapter = new CountryCodeRecyclerAdapter(getCountryList(), this);
         recycler_country.setAdapter(adapter);
-        }
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_search, menu);
+        return true;
+    }
 
     public ArrayList<Country> getCountryList(){
         PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
@@ -59,11 +67,24 @@ public class SelectCountryActivity extends BaseActivity {
             }
         });
 
-        /*for(int i=0;i<dataList.size();i++){
-
-            Log.d("AAA", dataList.get(i).getName() + "  "  + allContriesShortNsmes[i]);
-        }*/
+        setupFirstLetterField(dataList);
         return dataList;
+    }
+
+    /**
+     * В этом методе задаем полю значение -  букву на которое оно начинается,
+     * если слово первое в списке на новую букву, если не первое, то задаем ""
+     * @param dataList - колекция с названиями стран
+     */
+    private void setupFirstLetterField(ArrayList<Country> dataList) {
+        for(int i = 0; i < dataList.size(); i++){
+            if(i == 0) dataList.get(0).setFirstLetter(dataList.get(i).getName().substring(0, 1));
+            if(i != 0 && (dataList.get(i).getName().substring(0, 1)).equals(dataList.get(i-1).getName().substring(0, 1))){
+                dataList.get(i).setFirstLetter("");
+            } else{
+                dataList.get(i).setFirstLetter(dataList.get(i).getName().substring(0, 1));
+            }
+        }
     }
 
     static int getFlagResID(String country) {

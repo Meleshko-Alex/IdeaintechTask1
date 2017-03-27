@@ -44,13 +44,22 @@ public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCode
 
     @Override
     public void onBindViewHolder(CountryCodeRecyclerAdapter.ViewHolder holder, int position) {
-        holder.item_big_letter.setText(mCountry.get(position).getName().substring(0, 1));
-
+        holder.item_big_letter.setText(mCountry.get(position).getFirstLetter());
         holder.item_image.setImageDrawable(getRoundImage(mCountry.get(position).getFlagImageRes()));
-        //holder.item_image.setImageResource(mCountry.get(position).getFlagImageRes());
-
         holder.item_country.setText(mCountry.get(position).getName());
         holder.item_country_code.setText(mCountry.get(position).getPhoneCode());
+
+        if(!mCountry.get(position).getFirstLetter().equals("") && !mCountry.get(position).getFirstLetter().equals("A")){
+            RecyclerView.LayoutParams head_params = (RecyclerView.LayoutParams)holder.item_rl.getLayoutParams();
+
+            // перереводим px в dp
+            head_params.setMargins(0, (int)(24 * (mContext.getResources().getDisplayMetrics().density)), 0, 0);
+            holder.item_rl.setLayoutParams(head_params);
+        } else {
+            RecyclerView.LayoutParams head_params = (RecyclerView.LayoutParams)holder.item_rl.getLayoutParams();
+            head_params.setMargins(0, 0, 0, 0);
+            holder.item_rl.setLayoutParams(head_params);
+        }
     }
 
     private Drawable getRoundImage(int flagImageRes) {

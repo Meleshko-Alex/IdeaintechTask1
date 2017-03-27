@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setupDrawer();
         setupNavigationViewData();
 
-
     }
 
     private void setupNavigationViewData() {
