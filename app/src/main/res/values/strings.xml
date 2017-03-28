@@ -96,4 +96,7 @@
     <string name="johnsmith_mail_com">johnsmith@mail.com</string>
     <string name="my_phone">My Phone</string>
     <string name="upload_avatar">upload avatar</string>
+    <string name="your_top_countries">Your top countries</string>
+    <string name="from_0_015_gbp_min">from £0.015 GBP/min</string>
+    <string name="all_countries">All countries</string>
 </resources>

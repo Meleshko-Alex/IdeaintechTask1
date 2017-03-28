@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(chatIntent);
                 break;
             case R.id.ll_notifications:
+                Intent intentMobileRates = new Intent(this, MobileRatesActivity.class);
+                startActivity(intentMobileRates);
                 break;
             case R.id.ll_invite_friends:
                 break;

@@ -54,8 +54,11 @@
         </activity>
         <activity android:name=".ui.activities2.SelectCountryActivity">
         </activity>
-        <activity android:name=".ui.activities2.ProfileActivity"
-                  android:theme="@style/AppThemeNoBar">
+        <activity
+            android:name=".ui.activities2.ProfileActivity"
+            android:theme="@style/AppThemeNoBar">
+        </activity>
+        <activity android:name=".ui.activities2.MobileRatesActivity">
         </activity>
     </application>
 
