@@ -1,7 +1,5 @@
 package meleshko.com.ideaintechtask1.ui.activities2;
 
-import android.app.SearchManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -41,11 +39,9 @@ public class SelectCountryActivity extends BaseActivity {
         if(countryList == null){
             countryList = getCountryList();
         }
-
         recycler_country.setLayoutManager(new LinearLayoutManager(this));
-        CountryCodeRecyclerAdapter adapter = new CountryCodeRecyclerAdapter(countryList, this);
+        CountryCodeRecyclerAdapter adapter = new CountryCodeRecyclerAdapter(countryList, this, false);
         recycler_country.setAdapter(adapter);
-
     }
 
     @Override
@@ -59,7 +55,6 @@ public class SelectCountryActivity extends BaseActivity {
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String newText) {
                 ArrayList<Country> tempList = new ArrayList<>();
@@ -69,7 +64,7 @@ public class SelectCountryActivity extends BaseActivity {
                         tempList.add(temp);
                     }
                 }
-                CountryCodeRecyclerAdapter adapter = new CountryCodeRecyclerAdapter(tempList, SelectCountryActivity.this);
+                CountryCodeRecyclerAdapter adapter = new CountryCodeRecyclerAdapter(tempList, SelectCountryActivity.this, true);
                 recycler_country.setAdapter(adapter);
 
                 return true;
@@ -118,19 +113,6 @@ public class SelectCountryActivity extends BaseActivity {
             } else{
                 dataList.get(i).setFirstLetter(dataList.get(i).getName().substring(0, 1));
             }
-        }
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        handleIntent(intent);
-    }
-
-    private void handleIntent(Intent intent) {
-
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            //use the query to search
         }
     }
 

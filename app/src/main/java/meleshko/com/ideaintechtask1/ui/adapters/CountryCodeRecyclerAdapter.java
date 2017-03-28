@@ -29,10 +29,12 @@ public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCode
     private static final String EXTRA_ANSWER_COUNTRY_CODE = "EXTRA_ANSWER_COUNTRY_CODE";
     private final ArrayList<Country> mCountry;
     private final Context mContext;
+    private boolean isSearch;
 
-    public CountryCodeRecyclerAdapter(ArrayList<Country> country, Context context) {
+    public CountryCodeRecyclerAdapter(ArrayList<Country> country, Context context, boolean isSearch) {
         mCountry = country;
         mContext = context;
+        this.isSearch = isSearch;
     }
 
     @Override
@@ -44,12 +46,16 @@ public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCode
 
     @Override
     public void onBindViewHolder(CountryCodeRecyclerAdapter.ViewHolder holder, int position) {
-        holder.item_big_letter.setText(mCountry.get(position).getFirstLetter());
+        if(!isSearch){
+            holder.item_big_letter.setText(mCountry.get(position).getFirstLetter());
+        }
         holder.item_image.setImageDrawable(getRoundImage(mCountry.get(position).getFlagImageRes()));
         holder.item_country.setText(mCountry.get(position).getName());
         holder.item_country_code.setText(mCountry.get(position).getPhoneCode());
 
-        if(!mCountry.get(position).getFirstLetter().equals("") && !mCountry.get(position).getFirstLetter().equals("A")){
+        if(!mCountry.get(position).getFirstLetter().equals("")
+                && !mCountry.get(position).getFirstLetter().equals("A")
+                && !isSearch){
             RecyclerView.LayoutParams head_params = (RecyclerView.LayoutParams)holder.item_rl.getLayoutParams();
 
             // перереводим px в dp
@@ -68,7 +74,6 @@ public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCode
         return roundImage;
     }
 
-
     @Override
     public int getItemCount() {
         return mCountry.size();
@@ -80,13 +85,11 @@ public class CountryCodeRecyclerAdapter extends RecyclerView.Adapter<CountryCode
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         RelativeLayout item_rl;
         TextView item_big_letter;
         ImageView item_image;
         TextView item_country;
         TextView item_country_code;
-
 
         public ViewHolder(final View itemView) {
             super(itemView);
