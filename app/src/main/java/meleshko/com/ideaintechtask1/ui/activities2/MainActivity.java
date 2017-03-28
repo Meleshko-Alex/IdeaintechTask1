@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import butterknife.BindView;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout ll_chat_settings, ll_notifications, ll_invite_friends, ll_remittance_profile;
     private LinearLayout ll_transactions, ll_beneficiaries, ll_help;
     private final int REQUEST_COUTRY = 777;
+    private ImageView iv_profile;
 
     @BindView(R.id.btn_select_country)Button btn_select_country;
 
@@ -59,6 +61,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ll_beneficiaries.setOnClickListener(this);
         ll_help = (LinearLayout)header.findViewById(R.id.ll_help);
         ll_help.setOnClickListener(this);
+
+        iv_profile = (ImageView)header.findViewById(R.id.iv_profile);
+        iv_profile.setOnClickListener(this);
     }
 
     private void setupDrawer() {
@@ -93,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ll_help:
                 Intent intent = new Intent(this, HelpMenuActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.iv_profile:
+                Intent intentProfile = new Intent(this, ProfileActivity.class);
+                startActivity(intentProfile);
                 break;
         }
     }
