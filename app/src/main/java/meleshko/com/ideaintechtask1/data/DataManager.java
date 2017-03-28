@@ -18,7 +18,6 @@ import static java.lang.String.valueOf;
 
 public class DataManager {
     private static DataManager INSTANCE = null;
-    private PreferenceManager mPreferenceManager;
     private ArrayList<Country> countryList;
 
     public DataManager(){
