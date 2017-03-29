@@ -1,8 +1,6 @@
 package meleshko.com.ideaintechtask1.data;
 
 
-import android.preference.PreferenceManager;
-
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 
 import java.util.ArrayList;
