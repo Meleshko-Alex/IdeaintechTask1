@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intentMobileRates);
                 break;
             case R.id.ll_invite_friends:
+                Intent intentDialPad = new Intent(this, DialPadActivity.class);
+                startActivity(intentDialPad);
                 break;
             case R.id.ll_remittance_profile:
                 break;
