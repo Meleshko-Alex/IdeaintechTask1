@@ -43,6 +43,8 @@ public class DialPadActivity extends AppCompatActivity implements View.OnClickLi
     @BindView(R.id.call_btn)ImageView mKeyCall;
     @BindView(R.id.recycler_contact)RecyclerView mRecyclerView;
     @BindView(R.id.rl_invis)RelativeLayout mInvisBlock;
+    @BindView(R.id.btn_buy)ImageView mButtonBuy;
+    @BindView(R.id.btn_top_up)ImageView mButtonTopUp;
 
     private StringBuilder mBuilderLine;
     private ArrayList<Contact> mContactList;
@@ -56,7 +58,6 @@ public class DialPadActivity extends AppCompatActivity implements View.OnClickLi
         mRecyclerView.setLayoutManager(new LinearLayoutManager(DialPadActivity.this));
         setupOnClick();
         setupOnLongClick();
-        //setupSearchListener();
         mContactList = getContactList();
         mBuilderLine = new StringBuilder();
         setCountryCode();
@@ -134,6 +135,8 @@ public class DialPadActivity extends AppCompatActivity implements View.OnClickLi
         mKeyLeng.setOnClickListener(this);
         mKeyOk.setOnClickListener(this);
         mKeyCall.setOnClickListener(this);
+        mButtonBuy.setOnClickListener(this);
+        mButtonTopUp.setOnClickListener(this);
     }
 
     private void setupOnLongClick() {
@@ -203,6 +206,10 @@ public class DialPadActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.call_btn:
                 break;
+            case R.id.btn_top_up:
+                break;
+            case R.id.btn_buy:
+                break;
         }
     }
 
@@ -237,7 +244,7 @@ public class DialPadActivity extends AppCompatActivity implements View.OnClickLi
                 deleteAllChars();
                 break;
         }
-        return false;
+        return true;
     }
 
 }
