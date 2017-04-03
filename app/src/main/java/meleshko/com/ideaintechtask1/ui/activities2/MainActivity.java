@@ -2,6 +2,8 @@ package meleshko.com.ideaintechtask1.ui.activities2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +21,7 @@ import meleshko.com.ideaintechtask1.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private BottomSheetBehavior mBottomSheetBehavior;
     private DrawerLayout mNavigationDrawer;
     private NavigationView navigation_view;
     private View header;
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+        setupPopupMenu();
 
         mNavigationDrawer = (DrawerLayout)findViewById(R.id.navigation_drawer);
         navigation_view = (NavigationView)findViewById(R.id.navigation_view);
@@ -78,6 +83,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    private void setupPopupMenu(){
+        View bottomSheet = findViewById(R.id.bottom_sheet);
+        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        mBottomSheetBehavior.setPeekHeight(0);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -112,8 +124,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @OnClick(R.id.btn_select_country)
     public void submit(View view) {
-        Intent intent = new Intent(this, SelectCountryActivity.class);
-        startActivityForResult(intent, REQUEST_COUTRY);
+        /*Intent intent = new Intent(this, SelectCountryActivity.class);
+        startActivityForResult(intent, REQUEST_COUTRY);*/
+        showModalWindow();
+    }
+
+    private void showModalWindow() {
+        BottomSheetDialogFragment popupMenu = new PopupMenu();
+        popupMenu.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
     }
 
     @Override
