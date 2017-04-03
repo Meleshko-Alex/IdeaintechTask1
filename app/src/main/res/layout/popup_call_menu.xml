@@ -116,6 +116,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="16dp">
         <ImageView
+            android:id="@+id/popup_call_menu_free_call"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -123,6 +124,7 @@
             android:layout_weight="1"
             android:src="@drawable/button_free_call"/>
         <ImageView
+            android:id="@+id/popup_call_menu_mobile_call"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="9dp"

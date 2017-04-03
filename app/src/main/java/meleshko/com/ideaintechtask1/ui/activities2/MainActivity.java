@@ -126,10 +126,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void submit(View view) {
         /*Intent intent = new Intent(this, SelectCountryActivity.class);
         startActivityForResult(intent, REQUEST_COUTRY);*/
-        showModalWindow();
+        showPopupMenu();
     }
 
-    private void showModalWindow() {
+    private void showPopupMenu() {
         BottomSheetDialogFragment popupMenu = new PopupMenu();
         popupMenu.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
     }
